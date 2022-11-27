@@ -2,19 +2,18 @@
 
 {% block content %}
     {% load static %}
+    <h1>Документы</h1>
     <ol>
+        <li><a href="{% url 'docs' filename='reestr.pdf' %}">Выписка из реестра лицензий на осуществление образовательной деятельности</a></li>
+        <li><a href="{% url 'docs' filename='metod.pdf' %}">Положение о методической деятельности</a></li>
         <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
-        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
-        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
-        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
-        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
-        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+        <li><a href="{% url 'docs' filename='learn.pdf' %}">Положение об образовательной деятельности</a></li>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Устав компании</a></li>
     </ol>
 {% endblock %}
 
 {% block sidebar %}
     {% load static %}
-    <h1>Документы</h1>
     <ul>
         <li>
             <a href="{% url 'index' %}">Информация о сотруднике</a>
