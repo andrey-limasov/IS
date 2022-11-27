@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% load static %}
+    <ol>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+        <li><a href="{% url 'docs' filename='Building plan.pdf' %}">Поэтажный план здания</a></li>
+    </ol>
+{% endblock %}
+
+{% block sidebar %}
+    {% load static %}
+    <h1>Документы</h1>
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Информация о сотруднике</a>
+        </li>
+        {% if perms.isprofile.can_see_db %}
+        <li>
+            <a href="{% url 'dbinfo' %}">Настройки БД</a>
+        </li>
+        {% endif %}
+         <li>
+            <a href="{% url 'docs' %}">Документы</a>
+        </li>
+    </ul>
+{% endblock %}

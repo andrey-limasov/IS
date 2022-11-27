@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Пользователь</h1>
+    <p>Фамилия: {{ lastname }}</p>
+    <p>Имя: {{ firstname }}</p>
+    <p>email: {{ email }}</p>
+{% endblock %}
+
+{% block sidebar %}
+    {% load static %}
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Информация о сотруднике</a>
+        </li>
+        {% if perms.isprofile.can_see_db %}
+        <li>
+            <a href="{% url 'dbinfo' %}">Настройки БД</a>
+        </li>
+        {% endif %}
+         <li>
+            <a href="{% url 'docs' %}">Документы</a>
+        </li>
+    </ul>
+{% endblock %}

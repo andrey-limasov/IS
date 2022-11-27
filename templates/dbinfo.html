@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Найстройки БД</h1>
+    <p>Имя БД: {{ dbname }}</p>
+    <p>Порт БД: 5432</p>
+    <p>Flag: {{ flag }}</p>
+{% endblock %}
+
+{% block sidebar %}
+    {% load static %}
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Информация о сотруднике</a>
+        </li>
+        {% if perms.isprofile.can_see_db %}
+        <li>
+            <a href="{% url 'dbinfo' %}">Настройки БД</a>
+        </li>
+        {% endif %}
+         <li>
+            <a href="{% url 'docs' %}">Документы</a>
+        </li>
+    </ul>
+{% endblock %}
